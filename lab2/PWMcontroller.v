@@ -63,7 +63,7 @@ begin
         if ( count == 14'd0 ) begin 
         beep_r <= 1'b0;
         cnt <= 1'b0;
-        #2500000; // delay some time after reset?
+        #2337165; // delay some time after reset?
         end 
         
         else begin
