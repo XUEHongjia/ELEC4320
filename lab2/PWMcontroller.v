@@ -60,14 +60,26 @@ begin
         // write your code here
         // you can also modify other parts.
         count = countStart;
-        if ( count == 14'd0 ) begin 
+        if ( count == 14'd0 ) begin
+        if( beep_r == 1 ) begin 
+            if ( cnt == c ) begin 
+            beep_r <= 1'b0;
+            cnt <= 1'b0;
+            end
+            else begin 
+            cnt <= cnt + 1;
+            end
+            end
+        else begin 
         beep_r <= 1'b0;
         cnt <= 1'b0;
-        #2337165; // delay some time after reset?
+        end
         end 
         
+         // delay some time after reset?
+        
         else begin
-        c = 2500000/count;
+        c = 2500000/count -1 ;
         
         if ( cnt == 0 ) begin 
         beep_r <= !beep_r;
