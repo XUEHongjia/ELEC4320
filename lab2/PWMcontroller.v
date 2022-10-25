@@ -35,6 +35,7 @@ output beep;
 
 reg beep_r;
 reg [13:0] count;  
+reg [13:0] count_old;
 integer c;
 reg [14:0] cnt;
   
@@ -48,51 +49,67 @@ always @(posedge clk_5MHz)
 begin  
     if (reset)
     begin
-    beep_r <= 1'b0;
-    count <= 14'd0;
-    cnt <= 15'd0;
+    beep_r = 1'b0;
+    count_old = count;
+    count = 14'd0;
+    cnt = 15'd0;
         // write your code here
         // you can also modify other parts.
     end 
     
     else
     begin
+    
+    if ( count != countStart ) begin 
+    count_old = count;
+    count = countStart;
+    end
         // write your code here
         // you can also modify other parts.
-        count = countStart;
+        
         if ( count == 14'd0 ) begin
-        if( beep_r == 1 ) begin 
-            if ( cnt == c ) begin 
-            beep_r <= 1'b0;
-            cnt <= 1'b0;
+            if( beep_r == 1 ) begin 
+                if ( cnt == c ) begin 
+                    beep_r <= 1'b0;
+                    cnt <= 1'b0;
+                end
+                
+                else begin 
+                    cnt <= cnt + 1;
+                end
             end
+        
             else begin 
-            cnt <= cnt + 1;
+                beep_r <= 1'b0;
+                cnt <= 1'b0;
             end
-            end
-        else begin 
-        beep_r <= 1'b0;
-        cnt <= 1'b0;
-        end
         end 
         
-         // delay some time after reset?
         
         else begin
-        c = 2500000/count -1 ;
+            c = 2500000/count -1 ;
         
-        if ( cnt == 0 ) begin 
-        beep_r <= !beep_r;
-        cnt <= cnt + 15'd1;
-        end
+            if ( cnt == 0 ) begin 
+                beep_r <= !beep_r;
+                cnt <= cnt + 15'd1;
+            end
         
-        else if ( cnt > 0 && cnt <c ) begin 
-        cnt <= cnt + 15'd1;
-        end
+            else if ( cnt > 0 && cnt <c ) begin 
+                cnt <= cnt + 15'd1;
+            end
         
-        else if ( cnt == c ) begin 
-        cnt <= 15'd0;
-        end
+            else if ( cnt == c ) begin 
+                cnt <= 15'd0;
+            end
+            
+            else if ( cnt > c ) begin
+                 if ( cnt == 2500000/count_old - 1 ) begin
+                    cnt <= 0;
+                 end
+                 else begin
+                    cnt <= cnt + 1;
+                 end
+            end
         end
     end
 end 
