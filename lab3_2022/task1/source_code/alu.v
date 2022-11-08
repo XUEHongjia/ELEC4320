@@ -14,25 +14,25 @@ module alu(a, b, f, s);
 always@(*)
 
 case(f)
-    5'b00000: s <= a + b;
-    5'b00001: s <= a - b;
-    5'b00010: s <= a * b;
-    5'b00011: s <= a << b;
-    5'b00100: s <= a >> b;
-    5'b00101: s <= a & b;
-    5'b00110: s <= a | b;
-    5'b00111: s <= a ^ b;
-    5'b01000: s <= a && b;
-    5'b01001: s <= a || b;
-    5'b01010: s <= ( a == b );
-    5'b01011: s <= ( a != b );
-    5'b01100: s <= ( a >= b );
-    5'b01101: s <= ( a <= b );
-    5'b01110: s <= ( a > b );
-    5'b01111: s <= ( a < b );
-    5'b10000: s <= -b;
-    5'b10001: s <= ~b;
-    5'b10010: s <= !b;
+    `ADD: s <= a + b;
+    `SUB: s <= a - b;
+    `MUL: s <= a * b;
+    `SHL: s <= a << b;
+    `SHR: s <= a >> b;
+    `BAND: s <= a & b;
+    `BOR: s <= a | b;
+    `BXOR: s <= a ^ b;
+    `AND: s <= a && b;
+    `OR: s <= a || b;
+    `EQ: s <= ( a == b );
+    `NE: s <= ( a != b );
+    `GE: s <= ( a >= b );
+    `LE: s <= ( a <= b );
+    `GT: s <= ( a > b );
+    `LT: s <= ( a < b );
+    `NEG: s <= -b;
+    `BNOT: s <= ~b;
+    `NOT: s <= !b;
 endcase
 
 
