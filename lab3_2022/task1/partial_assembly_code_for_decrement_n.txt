@@ -1,0 +1,19 @@
+IN 8	; push to stack (for example, iteration count, which is given in 'in' variable, equals to 8 in cpu_tb.v)
+POP A	; store intial iteration count to address 800
+PUSH A	; read from address 800, push to stack
+OUT A	; output result (this is to handle loop boundary if your code does not go through the output statement in the loop body in the first iteration)
+
+		; loop body, to be completed
+...		; ...
+JZ A	; jump out of loop body if top == 0
+OUT A	; output current value
+JMP A	; jump to the memory address where loop body begins
+		; end of loop body
+
+OUT A	; output result (this is also to handle loop boundary if your code does not go through the output statement in the loop body in the last iteration)
+		; do anything you want if there is any other postprocessing to do ...
+HALT	;
+
+
+		; If you have any axuiliary variables, remember to put them in addresses starting from 0x800.
+		; You may arrange the usage of each word in the data memory space by yourself. It is also fine if you don't have any at the very beginning.
