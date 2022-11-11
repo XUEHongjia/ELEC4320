@@ -92,15 +92,31 @@ module xyaccumulator(
             begin
                 // Todo: you need to accumulate xaccu and yaccu with respect to the minlabel;	
                 case (minlabel)
-                    0: begin xaccu0 <= /*fill here according KMeans*/; yaccu0 <= /*fill here according KMeans*/; count0 <= count0 + 1; end
-                    1: begin xaccu1 <= /*fill here according KMeans*/; yaccu1 <= /*fill here according KMeans*/; count1 <= count1 + 1; end
-                    2: begin xaccu2 <= /*fill here according KMeans*/; yaccu2 <= /*fill here according KMeans*/; count2 <= count2 + 1; end
-                    3: begin xaccu3 <= /*fill here according KMeans*/; yaccu3 <= /*fill here according KMeans*/; count3 <= count3 + 1; end
-                    4: begin xaccu4 <= /*fill here according KMeans*/; yaccu4 <= /*fill here according KMeans*/; count4 <= count4 + 1; end
-                    5: begin xaccu5 <= /*fill here according KMeans*/; yaccu5 <= /*fill here according KMeans*/; count5 <= count5 + 1; end
-                    6: begin xaccu6 <= /*fill here according KMeans*/; yaccu6 <= /*fill here according KMeans*/; count6 <= count6 + 1; end
-                    7: begin xaccu7 <= /*fill here according KMeans*/; yaccu7 <= /*fill here according KMeans*/; count7 <= count7 + 1; end
-				endcase
+                    0: begin xaccu0 <= xaccu0 + pointx/*fill here according KMeans*/; 
+                    yaccu0 <= yaccu0 + pointy/*fill here according KMeans*/; 
+                    count0 <= count0 + 1; end
+                    1: begin xaccu1 <= xaccu1 + pointx/*fill here according KMeans*/; 
+                    yaccu1 <= yaccu1 + pointy/*fill here according KMeans*/; 
+                    count1 <= count1 + 1; end
+                    2: begin xaccu2 <= xaccu2 + pointx/*fill here according KMeans*/; 
+                    yaccu2 <= yaccu2 + pointy/*fill here according KMeans*/; 
+                    count2 <= count2 + 1; end
+                    3: begin xaccu3 <= xaccu3 + pointx/*fill here according KMeans*/; 
+                    yaccu3 <= yaccu3 + pointy/*fill here according KMeans*/; 
+                    count3 <= count3 + 1; end
+                    4: begin xaccu4 <= xaccu4 + pointx/*fill here according KMeans*/; 
+                    yaccu4 <= yaccu4 + pointy/*fill here according KMeans*/; 
+                    count4 <= count4 + 1; end
+                    5: begin xaccu5 <= xaccu5 + pointx/*fill here according KMeans*/; 
+                    yaccu5 <= yaccu5 + pointy/*fill here according KMeans*/; 
+                    count5 <= count5 + 1; end
+                    6: begin xaccu6 <= xaccu6 + pointx/*fill here according KMeans*/; 
+                    yaccu6 <= yaccu6 + pointy/*fill here according KMeans*/; 
+                    count6 <= count6 + 1; end
+                    7: begin xaccu7 <= xaccu7 + pointx/*fill here according KMeans*/; 
+                    yaccu7 <= yaccu7 + pointy/*fill here according KMeans*/; 
+                    count7 <= count7 + 1; end
+		endcase
             end
             else if(accu_reset)
             begin
