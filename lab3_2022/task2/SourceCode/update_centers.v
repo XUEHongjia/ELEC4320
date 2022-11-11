@@ -88,14 +88,22 @@ module update_centers(
             end
             else if(enable_update)
             begin
-                if(!count0) begin center0x <= /*fill here according KMeans*/; center0y <= /*fill here according KMeans*/; end
-                if(!count1) begin center1x <= /*fill here according KMeans*/; center1y <= /*fill here according KMeans*/; end
-                if(!count2) begin center2x <= /*fill here according KMeans*/; center2y <= /*fill here according KMeans*/; end
-                if(!count3) begin center3x <= /*fill here according KMeans*/; center3y <= /*fill here according KMeans*/; end
-                if(!count4) begin center4x <= /*fill here according KMeans*/; center4y <= /*fill here according KMeans*/; end
-                if(!count5) begin center5x <= /*fill here according KMeans*/; center5y <= /*fill here according KMeans*/; end
-                if(!count6) begin center6x <= /*fill here according KMeans*/; center6y <= /*fill here according KMeans*/; end
-                if(!count7) begin center7x <= /*fill here according KMeans*/; center7y <= /*fill here according KMeans*/; end
+                if(!count0) begin center0x <= xaccu0/count0/*fill here according KMeans*/; 
+                center0y <= yaccu0/count0/*fill here according KMeans*/; end
+                if(!count1) begin center1x <= xaccu1/count1 /*fill here according KMeans*/; 
+                center1y <= yaccu1/count1/*fill here according KMeans*/; end
+                if(!count2) begin center2x <= xaccu2/count2/*fill here according KMeans*/; 
+                center2y <= yaccu2/count2/*fill here according KMeans*/; end
+                if(!count3) begin center3x <= xaccu3/count3/*fill here according KMeans*/; 
+                center3y <= yaccu3/count3/*fill here according KMeans*/; end
+                if(!count4) begin center4x <= xaccu4/count4/*fill here according KMeans*/; 
+                center4y <= yaccu4/count4/*fill here according KMeans*/; end
+                if(!count5) begin center5x <= xaccu5/count5/*fill here according KMeans*/; 
+                center5y <= yaccu5/count5/*fill here according KMeans*/; end
+                if(!count6) begin center6x <= xaccu6/count6/*fill here according KMeans*/; 
+                center6y <= yaccu6/count6/*fill here according KMeans*/; end
+                if(!count7) begin center7x <= xaccu7/count7/*fill here according KMeans*/; 
+                center7y <= yaccu7/count7/*fill here according KMeans*/; end
            end
                 
         end
