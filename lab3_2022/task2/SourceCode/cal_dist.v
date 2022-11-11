@@ -73,14 +73,14 @@ module cal_dist(
 		else if (enable) begin
                         // Todo: you need to use provided signals to produce dist 0-7. Fill here.
                         // hint: without losing correctness, we use Euclidian distance square instead of Euclidian distance for simplicity.
-			dist0 <= ( pointx - center0x )*( pointy - center0y )/*fill here according KMeans*/;
-			dist1 <= ( pointx - center1x )*( pointy - center1y )/*fill here according KMeans*/;
-			dist2 <= ( pointx - center2x )*( pointy - center2y )/*fill here according KMeans*/;
-			dist3 <= ( pointx - center3x )*( pointy - center3y )/*fill here according KMeans*/;
-			dist4 <= ( pointx - center4x )*( pointy - center4y )/*fill here according KMeans*/;
-			dist5 <= ( pointx - center5x )*( pointy - center5y )/*fill here according KMeans*/;
-			dist6 <= ( pointx - center6x )*( pointy - center6y )/*fill here according KMeans*/;
-			dist7 <= ( pointx - center7x )*( pointy - center7y )/*fill here according KMeans*/;
+			dist0 <= ( pointx - center0x )*( pointx - center0x ) + ( pointy - center0y )*( pointy - center0y )/*fill here according KMeans*/;
+			dist1 <= ( pointx - center1x )*( pointx - center1x ) + ( pointy - center1y )*( pointy - center1y )/*fill here according KMeans*/;
+			dist2 <= ( pointx - center2x )*( pointx - center2x ) + ( pointy - center2y )*( pointy - center2y )/*fill here according KMeans*/;
+			dist3 <= ( pointx - center3x )*( pointx - center3x ) + ( pointy - center3y )*( pointy - center3y )/*fill here according KMeans*/;
+			dist4 <= ( pointx - center4x )*( pointx - center4x ) + ( pointy - center4y )*( pointy - center4y )/*fill here according KMeans*/;
+			dist5 <= ( pointx - center5x )*( pointx - center5x ) + ( pointy - center5y )*( pointy - center5y )/*fill here according KMeans*/;
+			dist6 <= ( pointx - center6x )*( pointx - center6x ) + ( pointy - center6y )*( pointy - center6y )/*fill here according KMeans*/;
+			dist7 <= ( pointx - center7x )*( pointx - center7x ) + ( pointy - center7y )*( pointy - center7y )/*fill here according KMeans*/;
 		end
 	end
 	
