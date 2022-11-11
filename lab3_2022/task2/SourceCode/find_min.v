@@ -63,5 +63,5 @@ module find_min(
 	assign dist47 = dist45 < dist67 ? dist45 : dist67;
 	
 	// Try to understand what have been on in the lines above. Fill the line below.
-	// assign minlabel = fill here.
+	 assign minlabel = dist03 < dist47 ? {1'b0,comp03} : {1'b1,comp47};
 endmodule
