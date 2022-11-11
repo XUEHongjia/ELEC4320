@@ -73,14 +73,14 @@ module cal_dist(
 		else if (enable) begin
                         // Todo: you need to use provided signals to produce dist 0-7. Fill here.
                         // hint: without losing correctness, we use Euclidian distance square instead of Euclidian distance for simplicity.
-			dist0 <= /*fill here according KMeans*/;
-			dist1 <= /*fill here according KMeans*/;
-			dist2 <= /*fill here according KMeans*/;
-			dist3 <= /*fill here according KMeans*/;
-			dist4 <= /*fill here according KMeans*/;
-			dist5 <= /*fill here according KMeans*/;
-			dist6 <= /*fill here according KMeans*/;
-			dist7 <= /*fill here according KMeans*/;
+			dist0 <= ( pointx - center0x )*( pointy - center0y )/*fill here according KMeans*/;
+			dist1 <= ( pointx - center1x )*( pointy - center1y )/*fill here according KMeans*/;
+			dist2 <= ( pointx - center2x )*( pointy - center2y )/*fill here according KMeans*/;
+			dist3 <= ( pointx - center3x )*( pointy - center3y )/*fill here according KMeans*/;
+			dist4 <= ( pointx - center4x )*( pointy - center4y )/*fill here according KMeans*/;
+			dist5 <= ( pointx - center5x )*( pointy - center5y )/*fill here according KMeans*/;
+			dist6 <= ( pointx - center6x )*( pointy - center6y )/*fill here according KMeans*/;
+			dist7 <= ( pointx - center7x )*( pointy - center7y )/*fill here according KMeans*/;
 		end
 	end
 	
