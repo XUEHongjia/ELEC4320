@@ -1,0 +1,9 @@
+`define MATRIXSIZE 64
+
+`define INPUTWIDTH 16
+`define INADDRWIDTH 6
+
+`define OUTPUTWIDTH 16
+`define OUTADDRWIDTH 6
+
+`define EXECYCLE 84
