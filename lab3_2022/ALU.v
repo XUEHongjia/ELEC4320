@@ -62,23 +62,23 @@ module ALU(
             end
             5'b00101:begin //SLT
                 overflow = 0;
-                res = (A_temp <= B_temp) ? one : zero_0;
+                res = (A_temp < B_temp) ? one : zero_0;
             end
             5'b00110:begin //SLTU
                 overflow = 0;
-                res = (A <= B) ? one : zero_0;
+                res = (A < B) ? one : zero_0;
             end
             5'b00111:begin //SLL
                 overflow = 0;
-                res = A << B;
+                res = A << B[4:0];
             end
             5'b01000:begin //SRL
                 overflow = 0;
-                res = A >> B;
+                res = A >> B[4:0];
             end
             5'b01001:begin //SRA
                 overflow = 0;
-                res = A_temp >>> B;
+                res = A_temp >>> B[4:0];
             end
 //Write your code here
 			5'b01010: begin // BGE
